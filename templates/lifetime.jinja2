@@ -18,6 +18,13 @@ We would also like to thank you for being incredibly attractive!<br>
 We will use your donation(s) to create real living Pokemon.<br>
 You have our eternal loyalty! Use it wisely.<br>
 Sincerely,<br>
-We're a Pyramid Scheme & so is {{ name }}
+We're a Pyramid Scheme & so is {{ name }}<br>
+<br>
+<h3>{{ name }}'s history</h3>
+<ul>
+{% for donation in history %}
+   <li>${{ donation }} </li>
+{% endfor %}
+</ul>
 {% endif %}
 {% endblock content %}

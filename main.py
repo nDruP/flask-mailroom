@@ -53,14 +53,13 @@ def lifetime_thanks():
         except Donor.DoesNotExist:
             return render_template('lifetime.jinja2',
                                    error=donor_name+" Does Not Exist!")
-        donor_sum = (
-            Donation.select(fn.SUM(Donation.value).alias('total'))
-            .where(Donation.donor == donor)
-        )
-        for d in donor_sum:
-            amount = d.total
+        history = [d.value for d in (Donation.select()
+                                     .where(Donation.donor == donor))]
+        amount = sum(history)
         return render_template('lifetime.jinja2',
-                               name=donor_name, amount=amount)
+                               name=donor_name,
+                               amount=amount,
+                               history=history)
     return render_template('lifetime.jinja2')
 
 
