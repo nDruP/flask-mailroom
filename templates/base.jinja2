@@ -11,8 +11,9 @@
     <h1>We're a Pyramid Scheme & So Are You! E-Mailroom</h1>
     <nav>
       <a id="report" href="{{ url_for('report') }}">Donor Report</a> | 
-    <a id="donation" href="{{ url_for('add_donation') }}">Add Donation</a> | 
-    <a id="projection" href="{{ url_for('run_projection') }}">Run Projections</a>
+      <a id="donation" href="{{ url_for('add_donation') }}">Add Donation</a> | 
+      <a id="projection" href="{{ url_for('run_projection') }}">Run Projections</a>
+      <a id="lifetime" href="{{ url_for('lifetime_thanks') }}">Thank a Patron</a>
     </nav>
     <h2>{% block subtitle %} {% endblock subtitle %}</h2>
     {% block content %} {% endblock content %}

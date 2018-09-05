@@ -1,0 +1,22 @@
+{% extends 'base.jinja2' %}
+
+{% block subtitle %}You're Wonderful!{% endblock subtitle %}
+
+{% block content %}
+{% if error %}{{ error }}{% endif %}<br>
+<form method="POST">
+      <label for="donor">Gracious Patron:</label>
+      <input type="text" id="donor" name="donor"><br>
+      <input type="submit" value="Write a Thank You!">
+</form>
+
+{% if name %}
+Dearest {{ name }},<br>
+Thank you for your lifetime donation of ${{ amount }}!<br>
+We would also like to thank you for being incredibly attractive!<br>
+We will use your donation(s) to create real living Pokemon.<br>
+You have our eternal loyalty! Use it wisely.<br>
+Sincerely,<br>
+We're a Pyramid Scheme & so is {{ name }}
+{% endif %}
+{% endblock content %}
