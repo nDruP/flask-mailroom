@@ -1,0 +1,12 @@
+{% extends 'base.jinja2' %}
+
+{% block subtitle %}Thank you!{% endblock subtitle %}
+
+{% block content %}
+Dearest {{ name }},<br>
+Thank you for your donation of {{ amount }}!
+We will use your donation(s) to create real living Pokemon.
+You now have our eternal loyalty. Use it wisely.<br>
+Sincerely,<br>
+We're a Pyramid Scheme & so is {{ name }}
+{% endblock content %}

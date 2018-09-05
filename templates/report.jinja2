@@ -1,0 +1,33 @@
+{% extends 'base.jinja2' %}
+
+{% block subtitle %}Donation Report{% endblock subtitle %}
+
+{% block content %}
+<h3>Donor Report:</h3>
+<table style="width:50%;">
+  <tr>
+    <th>Donor Name</th>
+    <th>Gifts</th>
+    <th>Avg Gift</th>
+    <th>Total Gift</th>
+  </tr>
+  {% for donor in donor_info %}
+  <tr>
+    <td>{{ donor.donor.name }}</td>
+    <td>{{ donor.num_gift }}</td>
+    <td>${{ donor.avg_gift }}</td>
+    <td>${{ donor.sum_gift }}</td>
+  </tr>
+  {% endfor %}
+
+  
+</table>
+
+<h3>All Donations:</h3>
+<ul>
+
+    {% for donation in donations %}
+        <li><b>{{ donation.donor.name }}</b>: {{ donation.value }}</li>
+    {% endfor %}
+</ul>
+{% endblock content %}
