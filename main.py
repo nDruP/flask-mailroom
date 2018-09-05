@@ -6,8 +6,7 @@ from peewee import fn
 from model import Donation, Donor
 
 app = Flask(__name__)
-app.secret_key = base64.b32encode(os.urandom(16)).decode().strip('=')
-# os.environ.get('SECRET_KEY').encode()
+app.secret_key = os.environ.get('SECRET_KEY').encode()
 
 
 @app.route('/')
